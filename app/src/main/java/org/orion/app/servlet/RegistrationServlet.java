@@ -7,6 +7,7 @@ import org.orion.app.entity.User;
 import org.orion.app.model.RegistrationModel;
 import org.orion.app.persistance.configuration.DataConfiguration;
 import org.orion.app.persistance.configuration.HibernateMySQLConfiguration;
+import org.orion.app.persistance.repository.contract.IAccountRepository;
 import org.orion.app.persistance.repository.implementation.AccountRepository;
 
 import javax.servlet.ServletException;
@@ -21,7 +22,7 @@ import java.io.IOException;
 public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.getServletContext().getRequestDispatcher("/WEB-INF/registration.jsp").forward(request, response);
+        this.getServletContext().getRequestDispatcher("/WEB-INF/account/registration.jsp").forward(request, response);
     }
 
     @Override
@@ -34,7 +35,8 @@ public class RegistrationServlet extends HttpServlet {
 
         System.out.println(account);
 
-        AccountRepository accountRepository = new AccountRepository(DataConfiguration.getSessionFactory());
+        IAccountRepository accountRepository =
+                (IAccountRepository) getServletContext().getAttribute("accountRepository");
 
         accountRepository.save(account);
 

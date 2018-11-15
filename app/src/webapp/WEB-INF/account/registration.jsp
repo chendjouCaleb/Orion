@@ -12,7 +12,7 @@
 <body>
     <div class="container-fluid">
         <form method="post" class="col-4 offset-lg-4 mt-5 border py-3">
-            <h4 class="col">Inscription</h4>
+            <h3 class="col font-weight-bold">Inscription</h3>
             <hr>
             <div class="col-12 form-group">
                 <label for="name">Nom</label>
