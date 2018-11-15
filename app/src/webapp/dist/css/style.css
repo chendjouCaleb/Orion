@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "Open Sans";
+    src: url("fonts/OpenSans-Regular.ttf");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Open Sans Bold";
+    src: url("fonts/OpenSans-Bold.ttf");
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+}

@@ -1,0 +1,5 @@
+.idea
+.gradle
+*/out
+*.mv.db
+tomcat.9500
